@@ -1,0 +1,91 @@
+//question 5
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+    int n, sum=0, r;
+
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        r=n%10;
+        sum=sum+r;
+        n=n/10;
+    }
+
+    printf("Sum of digits = %d",sum);
+    getch();
+}
+//question 6
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+    int n, rev=0, r;
+
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        r=n%10;
+        rev=rev*10+r;
+        n=n/10;
+    }
+
+    printf("Reverse = %d",rev);
+    getch();
+}
+
+//question 7
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+    int n, product=1, r;
+
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        r=n%10;
+        product=product*r;
+        n=n/10;
+    }
+rintf("Product of digits = %d",product);
+    getch();
+}
+
+//question 8
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+    int n, temp, rev=0, r;
+
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    temp=n;
+
+    while(n>0)
+    {
+        r=n%10;
+        rev=rev*10+r;
+        n=n/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not a Palindrome Number");
+
+    getch();
+}
