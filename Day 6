@@ -1,1 +1,75 @@
+//question 21
+#include<stdio.h>
 
+void main()
+{
+    int n,binary=0,place=1,r;
+
+    printf("Enter decimal number: ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        r=n%2;
+        binary=binary+r*place;
+        place=place*10;
+        n=n/2;
+    }
+
+    printf("Binary = %d",binary);
+}
+//question 22
+#include<stdio.h>
+
+void main()
+{
+    int bin,dec=0,base=1,r;
+
+    printf("Enter binary number: ");
+    scanf("%d",&bin);
+
+    while(bin>0)
+    {
+        r=bin%10;
+        dec=dec+r*base;
+        base=base*2;
+        bin=bin/10;
+    }
+
+    printf("Decimal = %d",dec);
+}
+//questin 23
+#include<stdio.h>
+
+void main()
+{
+    int n,count=0;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        if(n%2==1)
+            count++;
+
+        n=n/2;
+    }
+
+    printf("Set Bits = %d",count);
+}
+//question 24
+#include<stdio.h>
+
+void main()
+{
+    int x,n,i,result=1;
+
+    printf("Enter x and n: ");
+    scanf("%d%d",&x,&n);
+
+    for(i=1;i<=n;i++)
+        result=result*x;
+
+    printf("Answer = %d",result);
+}
