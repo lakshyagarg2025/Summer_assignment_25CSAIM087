@@ -1,1 +1,87 @@
+//question 25
+#include<stdio.h>
 
+int fact(int n)
+{
+    if(n==0)
+        return 1;
+    return n*fact(n-1);
+}
+
+void main()
+{
+    int n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    printf("Factorial = %d",fact(n));
+}
+//question 26
+#include<stdio.h>
+
+int fib(int n)
+{
+    if(n==0)
+        return 0;
+    if(n==1)
+        return 1;
+
+    return fib(n-1)+fib(n-2);
+}
+
+void main()
+{
+    int n,i;
+
+    printf("Enter terms: ");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        printf("%d ",fib(i));
+}
+//question 27
+#include<stdio.h>
+
+int sumDigit(int n)
+{
+    if(n==0)
+        return 0;
+
+    return n%10 + sumDigit(n/10);
+}
+
+void main()
+{
+    int n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    printf("Sum = %d",sumDigit(n));
+}
+//question 28
+#include<stdio.h>
+
+int rev=0;
+
+void reverse(int n)
+{
+    if(n==0)
+        return;
+
+    rev=rev*10+n%10;
+    reverse(n/10);
+}
+
+void main()
+{
+    int n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    reverse(n);
+
+    printf("Reverse = %d",rev);
+}
