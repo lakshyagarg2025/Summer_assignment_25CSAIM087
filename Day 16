@@ -1,1 +1,115 @@
+/* Question 61 : Find Missing Number in Array */
 
+#include<stdio.h>
+
+void main()
+{
+    int n,i,sum=0,total=0,a[100];
+
+    scanf("%d",&n);
+
+    for(i=0;i<n-1;i++)
+    {
+        scanf("%d",&a[i]);
+        sum+=a[i];
+    }
+
+    total=n*(n+1)/2;
+
+    printf("Missing Number = %d",total-sum);
+}
+
+/* Question 62 : Find Maximum Frequency Element */
+
+#include<stdio.h>
+
+void main()
+{
+    int a[100],n,i,j,count,max=0,element;
+
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+
+    for(i=0;i<n;i++)
+    {
+        count=1;
+
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+                count++;
+        }
+
+        if(count>max)
+        {
+            max=count;
+            element=a[i];
+        }
+    }
+
+    printf("Element = %d\nFrequency = %d",element,max);
+}
+
+/* Question 63 : Find Pair With Given Sum */
+
+#include<stdio.h>
+
+void main()
+{
+    int a[100],n,i,j,sum;
+
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+
+    scanf("%d",&sum);
+
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]+a[j]==sum)
+                printf("%d %d\n",a[i],a[j]);
+        }
+    }
+}
+
+/* Question 64 : Remove Duplicates From Array */
+
+#include<stdio.h>
+
+void main()
+{
+    int a[100],n,i,j,k;
+
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;)
+        {
+            if(a[i]==a[j])
+            {
+                for(k=j;k<n-1;k++)
+                    a[k]=a[k+1];
+
+                n--;
+            }
+            else
+            {
+                j++;
+            }
+        }
+    }
+
+    printf("Array After Removing Duplicates:\n");
+
+    for(i=0;i<n;i++)
+        printf("%d ",a[i]);
+}
