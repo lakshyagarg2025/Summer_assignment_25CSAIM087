@@ -1,0 +1,80 @@
+/* Question 81 : Find String Length Without strlen() */
+
+#include<stdio.h>
+
+void main()
+{
+    char str[100];
+    int i=0;
+
+    gets(str);
+
+    while(str[i]!='\0')
+        i++;
+
+    printf("Length = %d",i);
+}
+
+/* Question 82 : Reverse a String */
+
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+    char str[100];
+    int i,len;
+
+    gets(str);
+
+    len=strlen(str);
+
+    for(i=len-1;i>=0;i--)
+        printf("%c",str[i]);
+}
+
+/* Question 83 : Count Vowels and Consonants */
+
+#include<stdio.h>
+
+void main()
+{
+    char str[100];
+    int i,v=0,c=0;
+
+    gets(str);
+
+    for(i=0;str[i]!='\0';i++)
+    {
+        if((str[i]>='A'&&str[i]<='Z')||(str[i]>='a'&&str[i]<='z'))
+        {
+            if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'||
+               str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')
+                v++;
+            else
+                c++;
+        }
+    }
+
+    printf("Vowels = %d\nConsonants = %d",v,c);
+}
+
+/* Question 84 : Convert Lowercase to Uppercase */
+
+#include<stdio.h>
+
+void main()
+{
+    char str[100];
+    int i;
+
+    gets(str);
+
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]>='a'&&str[i]<='z')
+            str[i]=str[i]-32;
+    }
+
+    puts(str);
+}
